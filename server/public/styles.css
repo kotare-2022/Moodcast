@@ -22,59 +22,77 @@ body{
 #windy{
   z-index: 10; 
   position:absolute;
-  background-color: green;
   height: 100px;
   width:100px;
   margin-left: 1100px;
-  margin-top: 560px;
-
+  margin-top: 540px;
 }
-
+#windy:hover{
+  border: 3px solid grey;
+  border-radius: 50px;
+}
 
 #sunny{
   z-index: 10; 
   position:absolute;
-  background-color:yellow;
   height: 100px;
   width:100px;
-  margin-left: 986px;
-  margin-top: 469px;
+  margin-left: 969px;
+  margin-top: 451px;
+}
+#sunny:hover{
+  border: 3px solid yellow;
+  border-radius: 50px;
 }
 #rainy{
   z-index: 10; 
   position:absolute;
-  background-color: rgb(47, 157, 221);
   height: 100px;
   width:100px;
  
   margin-left: 288px;
-  margin-top: 310px;
+  margin-top: 354px;
 }
+#rainy:hover{
+  border: 3px solid lightblue;
+  border-radius: 50px;
+}
+
 #cloudy{
   z-index: 10; 
   position:absolute;
-  background-color: rgb(154, 221, 47);
   height: 100px;
   width:100px;
   margin-left: 590px;
     margin-top: 148px;
 }
+#cloudy:hover{
+  border: 3px solid white;
+  border-radius: 50px;
+}
+
 #snowy{
   z-index: 10; 
   position:absolute;
-  background-color: blue;
   height: 100px;
   width:100px;
-  margin-left: 492px;
+  margin-left: 467px;
   margin-top: 106px;
 }
+#snowy:hover{
+  border: 3px solid blue;
+  border-radius: 50px;
+}
+
 #stormy{
   z-index: 10; 
   position:absolute;
-  background-color: red;
   height: 100px;
   width:100px;
     margin-left: 167px;
     margin-top: 111px;
-
+}
+#stormy:hover{
+  border: 3px solid red;
+  border-radius: 50px;
 }
