@@ -22,13 +22,19 @@ function App() {
   }
  
 
-  return( 
-    <>
-    <button onClick={handleMondayClick}>Monday</button>
-    <p>{weatherStatement}</p>
-    
-  
-  
+  return(
+  <> 
+    <h1>MOOD FORECAST</h1>   
+   <div id = 'weather'> <button onClick={handleMondayClick}>Wellington weather</button>
+   {weather && <p>Date: <br/>{weather?.time[1]}</p>}
+   {weather && <p>Max temp: {weather?.temperature_2m_max[1]}</p>}
+   {weather && <p>Min temp: {weather?.temperature_2m_min[1]}</p>}
+   {weather && <p>Rain: {weather?.rain_sum[1]}</p>}
+   {weather && <p>Rain: {weather?.snowfall_sum[1]}</p>}
+
+
+
+   </div> 
   <div id ='container'>
     <div id='map'>
       <img width='1200px' src = 'images/map.png' alt='map picture'/>
@@ -39,11 +45,12 @@ function App() {
     <div id='cloudy'>.</div>
     <div id='snowy'>.</div>
     <div id='stormy'>.</div>
+   
 
   </div>
  
 </>
   ) 
-  }
+}
 
 export default App
