@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react'
 import {getWeather} from '../api/weatherApi'
 
-
 function App() {
   const [weather,setWeather]=useState(null)
 
@@ -52,7 +51,23 @@ function App() {
     {(weather?.temperature_2m_min[0]>15)?<p>Welly Weather:sunny </p>:<p>Welly Weather:soooo cold</p>} */}
     {/* {weather && <p>Welly TempMin: {weather?.temperature_2m_min[0]} </p>} */}
 
-  </>
-)}
+  
+  
+  <div id ='container'>
+    <div id='map'>
+      <img width='1200px' src = 'images/map.png' alt='map picture'/>
+    </div>
+    <div id='windy'>.</div>
+    <div id='sunny'>.</div>
+    <div id='rainy'>.</div>
+    <div id='cloudy'>.</div>
+    <div id='snowy'>.</div>
+    <div id='stormy'>.</div>
+
+  </div>
+ 
+</>
+  ) 
+  }
 
 export default App
