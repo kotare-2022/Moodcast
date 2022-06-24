@@ -1,54 +1,31 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState } from 'react'
-import {getWeather,valueWeather} from '../api/weatherApi'
+
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Windy from './Windy'
+import Home from './Home'
+import Sunny from './Sunny'
+import Rainy from './Rainy'
+import Snowy from './Snowy'
+import Stormy from './Stormy'
+import Cloudy from './Cloudy'
+
+
 function App() {
-  const [weather,setWeather]=useState(null)
-  const [value,setValue] = useState(null)
 
 
-  const handleMondayClick = () => {
-    return getWeather()
-    .then(obj => {
-      setWeather(obj)
-      
-      })
-  }
+  return( 
+    <>
 
-  const weatherStatement = ()=>{
-    return valueWeather()
-    .then(value=>{
-      setValue(value)
-    })
-  }
- 
-
-  return(
-  <> 
-    <h1>MOOD FORECAST</h1>   
-   <div id = 'weather'> <button onClick={handleMondayClick}>Wellington weather</button>
-   {weather && <p>Date: <br/>{weather?.time[1]}</p>}
-   {weather && <p>Max temp: {weather?.temperature_2m_max[1]}</p>}
-   {weather && <p>Min temp: {weather?.temperature_2m_min[1]}</p>}
-   {weather && <p>Rain: {weather?.rain_sum[1]}</p>}
-   {weather && <p>Rain: {weather?.snowfall_sum[1]}</p>}
-
-
-
-   </div> 
-  <div id ='container'>
-    <div id='map'>
-      <img width='1200px' src = 'images/map.png' alt='map picture'/>
-    </div>
-    <div id='windy'>.</div>
-    <div id='sunny'>.</div>
-    <div id='rainy'>.</div>
-    <div id='cloudy'>.</div>
-    <div id='snowy'>.</div>
-    <div id='stormy'>.</div>
-   
-
-  </div>
- 
+ <Routes>
+ <Route path="/" element={<Home />} />
+  <Route path="/windy" element={<Windy />} />
+  <Route path="/Sunny" element={<Sunny />} />
+  <Route path="/Rainy" element={<Rainy />} />
+  <Route path="/Cloudy" element={<Cloudy />} />
+  <Route path="/Snowy" element={<Snowy />} />
+  <Route path="/Stormy" element={<Stormy />} />
+ </Routes>
 </>
   ) 
 }
