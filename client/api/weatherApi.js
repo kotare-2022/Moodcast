@@ -10,11 +10,12 @@ export function getWeather() {
       return res.body.daily
     })
 }
-
-// export function checkWeather(){
-//   return(
-//     .then((weather)=>{
-//     if (weather?.snowfall_sum[0] ==0 && weather?.rain_sum[0] == 0
-//       && weather?.temperature_2m_max[0] > 15 )
-//       { return 'sunny'}})
-//     )}
+export function valueWeather(props) {
+  if (
+    props.weather?.snowfall_sum[0] == 0 &&
+    props.weather?.rain_sum[0] == 0 &&
+    props.weather?.temperature_2m_max[0] > 15
+  ) {
+    return 'sunny'
+  }
+}
