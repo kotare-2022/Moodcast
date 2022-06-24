@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState, useEffect } from 'react'
-import {getWeather} from '../api/weatherApi'
-
+import React, { useState } from 'react'
+import {getWeather,valueWeather} from '../api/weatherApi'
 function App() {
   const [weather,setWeather]=useState(null)
+  const [value,setValue] = useState(null)
 
 
   const handleMondayClick = () => {
@@ -13,44 +13,20 @@ function App() {
       
       })
   }
-  function valueWeather (){
-    return getWeather()
-    .then(()=>{
-    if (weather?.snowfall_sum[0] ==0 && weather?.rain_sum[0] == 0
-        && weather?.temperature_2m_max[0] > 15 ){
-          return 'sunny'
-        }
-        })
 
+  const weatherStatement = ()=>{
+    return valueWeather()
+    .then(value=>{
+      setValue(value)
+    })
   }
-
-
-  // const checkWeathere =()=>{
-  //   return checkWeather()
-  //     .then(value =>{
-  //       setWeather(value)
-  //     })
-    
-  //   if (weather?.rain_sum[0] > 0 ){
-  //     return 'rainy'
-
-  // }else if (weather?.snowfall_sum[0] > 0){
-  //   return 'snowy'
-  //  if (weather?.snowfall_sum[0] ==0 && weather?.rain_sum[0] == 0
-  //   && weather?.temperature_2m_max[0] > 15 ){
-  //     return 'sunny'
-  
-
-  // }
+ 
 
   return( 
     <>
     <button onClick={handleMondayClick}>Monday</button>
-    <p>{valueWeather}</p>
-    {/* {weather && <p>Welly TIME: {weather?.time[0]}</p>}
-    {(weather?.temperature_2m_min[0]>15)?<p>Welly Weather:sunny </p>:<p>Welly Weather:soooo cold</p>} */}
-    {/* {weather && <p>Welly TempMin: {weather?.temperature_2m_min[0]} </p>} */}
-
+    <p>{weatherStatement}</p>
+    
   
   
   <div id ='container'>
