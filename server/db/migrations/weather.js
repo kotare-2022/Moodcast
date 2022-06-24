@@ -1,9 +1,9 @@
 exports.up = function (knex) {
   return knex.schema.createTable('Weather', (table) => {
     table.increments('id').primary()
-    table.string('forecast')
-    table.string('image_id')
-    table.string('music_id')
+    table.string('weather')
+    table.string('image_name')
+    table.string('song_name')
   })
 }
 
