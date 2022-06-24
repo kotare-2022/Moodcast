@@ -1,23 +1,4 @@
 /* eslint-disable jsx-a11y/alt-text */
-<<<<<<< HEAD
-import React, { useState, useEffect } from 'react'
-import {getWeather} from '../api/weatherApi'
-import { Routes, Route } from 'react-router-dom'
-import Windy from './Windy'
-import Home from './Home'
-import Sunny from './Sunny'
-import Rainy from './Rainy'
-import Snowy from './Snowy'
-import Stormy from './Stormy'
-import Cloudy from './Cloudy'
-
-
-function App() {
-
-
-  return( 
-    <>
-=======
 import React, { useState } from 'react'
 import {getWeather,valueWeather} from '../api/weatherApi'
 function App() {
@@ -58,7 +39,6 @@ function App() {
     <div id='cloudy'>.</div>
     <div id='snowy'>.</div>
     <div id='stormy'>.</div>
->>>>>>> bc03ea20d90858a90a71307f4064de06e73fd231
 
  <Routes>
  <Route path="/" element={<Home />} />

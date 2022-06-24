@@ -1,14 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
+import { Link , useParams } from 'react-router-dom'
+import useSound from 'use-sound'
+
+import sunny from '../sounds/sunny.mp3'
 
 function Sunny () {
-
+  const [play] = useSound(sunny)
 
   return (
   <>
 
-<p>Sunny  </p>
+<img src='sunny.jpeg' alt='sunny' onClick={play} />
 
   </>
   )
