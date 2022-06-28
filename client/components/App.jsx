@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useState, useEffect } from 'react'
-import {getWeather} from '../api/weatherApi'
+import React from 'react'
+
 import { Routes, Route } from 'react-router-dom'
 import Windy from './Windy'
 import Home from './Home'
@@ -28,6 +28,6 @@ function App() {
  </Routes>
 </>
   ) 
-  }
+}
 
 export default App

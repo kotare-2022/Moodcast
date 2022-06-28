@@ -1,8 +1,6 @@
-/* eslint-disable jsx-a11y/alt-text */
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import {getWeather} from '../api/weatherApi'
-import { Routes, Route } from 'react-router-dom'
-
+import {Link} from 'react-router-dom'
 
 
 function Home() {
@@ -16,56 +14,29 @@ function Home() {
       
       })
   }
-  function valueWeather (){
-    return getWeather()
-    .then(()=>{
-    if (weather?.snowfall_sum[0] ==0 && weather?.rain_sum[0] == 0
-        && weather?.temperature_2m_max[0] > 15 ){
-          return 'sunny'
-        }
-        })
+return(
+  <> 
+    <h1>MOOD FORECAST</h1>   
+   <div id = 'weather'> <button onClick={handleMondayClick}>Wellington weather</button>
+   {weather && <p>Date: <br/>{weather?.time[1]}</p>}
+   {weather && <p>Max temp: {weather?.temperature_2m_max[1]}</p>}
+   {weather && <p>Min temp: {weather?.temperature_2m_min[1]}</p>}
+   {weather && <p>Rain: {weather?.rain_sum[1]}</p>}
+   {weather && <p>Rain: {weather?.snowfall_sum[1]}</p>}
 
-  }
 
 
-  // const checkWeathere =()=>{
-  //   return checkWeather()
-  //     .then(value =>{
-  //       setWeather(value)
-  //     })
-    
-  //   if (weather?.rain_sum[0] > 0 ){
-  //     return 'rainy'
-
-  // }else if (weather?.snowfall_sum[0] > 0){
-  //   return 'snowy'
-  //  if (weather?.snowfall_sum[0] ==0 && weather?.rain_sum[0] == 0
-  //   && weather?.temperature_2m_max[0] > 15 ){
-  //     return 'sunny'
-  
-
-  // }
-
-  return( 
-    <>
-    <button onClick={handleMondayClick}>Monday</button>
-    <p>{valueWeather}</p>
-    {/* {weather && <p>Welly TIME: {weather?.time[0]}</p>}
-    {(weather?.temperature_2m_min[0]>15)?<p>Welly Weather:sunny </p>:<p>Welly Weather:soooo cold</p>} */}
-    {/* {weather && <p>Welly TempMin: {weather?.temperature_2m_min[0]} </p>} */}
-
-  
-  
+   </div> 
   <div id ='container'>
     <div id='map'>
       <img width='1200px' src = 'images/map.png' alt='map picture'/>
     </div>
-    <div id='windy'>.</div>
-    <div id='sunny'>.</div>
-    <div id='rainy'>.</div>
-    <div id='cloudy'>.</div>
-    <div id='snowy'>.</div>
-    <div id='stormy'>.</div>
+    {<Link to= {'/windy'}><div id='windy'>.</div></Link>}
+    {<Link to= {'/Sunny'}><div id='sunny'>.</div></Link>}
+    {<Link to= {'/Cloudy'}><div id='cloudy'>.</div></Link>}
+    {<Link to= {'/Snowy'}><div id='snowy'>.</div></Link>}
+    {<Link to= {'/Stormy'}><div id='stormy'>.</div></Link>}
+    {<Link to= {'/Rainy'}><div id='rainy'>.</div></Link>}
   </div>
 
 </>
@@ -73,3 +44,4 @@ function Home() {
   }
 
 export default Home
+

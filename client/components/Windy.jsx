@@ -11,7 +11,7 @@ function Windy () {
   return (
   <>
 
-<img src="images/windy.jpeg" alt="" />
+<img  width='2000px'  src="images/windy.jpeg" alt="" />
 <button onClick={play}>music</button>
 
   </>

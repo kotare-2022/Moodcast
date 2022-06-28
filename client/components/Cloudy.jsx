@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import useSound from 'use-sound'
-import stormy from '../sounds/cloudy.mp3'
+import cloudy from '../sounds/cloudy.mp3'
 
 function Cloudy () {
   const [play] = useSound(cloudy)
@@ -10,7 +10,7 @@ function Cloudy () {
   return (
   <>
 
-<img src="images/cloudy.jpeg" alt="" />
+<img  height='1000px'  src="images/cloudy.jpeg" alt="" />
 <button onClick={play}>music</button>
 
   </>

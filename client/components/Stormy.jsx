@@ -11,7 +11,7 @@ function Stormy () {
   return (
   <>
 
-<img src="images/stormy.jpeg" alt="" />
+<img width='2000px'  src="images/stormy.jpeg" alt="" />
 <button onClick={play}>music</button>
 
   </>

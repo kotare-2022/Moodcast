@@ -9,7 +9,7 @@ function Snowy () {
 
   return (
   <>
-<img src="images/snowy.jpeg" alt="" />
+<img  width='2000px'  src="images/snowy.jpeg" alt="" />
 <button onClick={play}>music</button>
 
   </>

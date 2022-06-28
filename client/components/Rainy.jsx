@@ -10,7 +10,7 @@ function Rainy () {
   return (
   <>
 
-<img src="images/rainy.jpeg" alt="" />
+<img  width='2000px' src="images/rainy.jpeg" alt="" />
 <button onClick={play}>music</button>
   </>
   )
