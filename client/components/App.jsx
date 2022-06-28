@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
-
 import React from 'react'
+
 import { Routes, Route } from 'react-router-dom'
 import Windy from './Windy'
 import Home from './Home'
